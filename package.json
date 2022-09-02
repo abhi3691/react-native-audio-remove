@@ -1,6 +1,6 @@
 {
   "name": "react-native-audio-remove",
-  "version": "0.1.20",
+  "version": "0.1.23",
   "description": "React Native module for merge video & audio,removeAudio from video,fastAndSlow video,trimVideo,merge videos,crop audio  For Android only.",
   "main": "lib/commonjs/index",
   "module": "lib/module/index",

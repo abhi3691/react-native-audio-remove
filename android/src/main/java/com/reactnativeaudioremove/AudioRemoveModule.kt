@@ -2,7 +2,7 @@ package com.reactnativeaudioremove
 
 import com.facebook.react.bridge.*
 import com.simform.videooperations.*
-import org.json.JSONArray
+import com.facebook.react.bridge.ReactApplicationContext
 
 
 class AudioRemoveModule(reactContext: ReactApplicationContext) :
@@ -45,28 +45,22 @@ class AudioRemoveModule(reactContext: ReactApplicationContext) :
 
   }
 
-  @ReactMethod
-  fun combineVideo(videoPath: ReadableArray, width: Int?, height: Int?, promise: Promise) {
-    val pathList = ArrayList<Paths>()
-    val pathList1 = ArrayList<String>()
-    for((index,path) in videoPath.toArrayList().withIndex()){
-    var value:String =  videoPath.getString(index)
-      pathList1.add(value)
-
-    }
-
-
-    for(element in pathList1) {
-      val paths = Paths()
-      paths.filePath = element
-      paths.isImageFile = false
-      pathList.add(paths)
-    }
-    combineVideoProcess(pathList, width, height, promise)
-    println(pathList);
-
-
-  }
+//  @ReactMethod
+//  fun combineVideo(videoPath: ReadableArray, width: Int?, height: Int?, promise: Promise) {
+//    val pathList = new  ArrayList<Paths>()
+//    val path = arrayOf(
+//      "http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/SubaruOutbackOnStreetAndDirt.mp4",
+//      "http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4",
+//      "http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerEscapes.mp4",
+//    )
+//
+//    val metadata = Arguments.createMap()
+//   for(i in 0 until  videoPath.size() ){
+//     val singleValue = videoPath.getString(i)
+//       metadata.putString(singleValue,"")
+//     }
+//
+//   }
 
   @ReactMethod
   fun cropAudio(audioPath: String, startTime: String, endingTime: String, promise: Promise) {
@@ -181,34 +175,35 @@ class AudioRemoveModule(reactContext: ReactApplicationContext) :
   }
 
 
-  private fun combineVideoProcess(
-    videoPath: ArrayList<Paths>,
-    width: Int?,
-    height: Int?,
-    promise: Promise
-  ) {
-    val outPutPath = Common.getFilePath(reactContext, Common.VIDEO)
-    val query = ffmpegQueryExtension.combineVideos(videoPath, width, height, outPutPath)
-    CallBackOfQuery().callQuery(query, object : FFmpegCallBack {
-      override fun process(logMessage: LogMessage) {
+  // private fun combineVideoProcess(
+  //   videoPath: ArrayList<Paths>,
+  //   width: Int?,
+  //   height: Int?,
+  //   promise: Promise
+  // ) {
+  //   promise.resolve(videoPath.toString())
+  //   val outPutPath = Common.getFilePath(reactContext, Common.VIDEO)
+  //   val query = ffmpegQueryExtension.combineVideos(videoPath, width, height, outPutPath)
+  //   CallBackOfQuery().callQuery(query, object : FFmpegCallBack {
+  //     override fun process(logMessage: LogMessage) {
 
-      }
+  //     }
 
-      override fun success() {
-        promise.resolve(outPutPath)
-      }
+  //     override fun success() {
+  //       promise.resolve(outPutPath)
+  //     }
 
-      override fun cancel() {
-        promise.reject("Canceled", "Canceled video merge Process")
-      }
+  //     override fun cancel() {
+  //       promise.reject("Canceled", "Canceled video merge Process")
+  //     }
 
-      override fun failed() {
-        promise.reject("failed", "failed video merge Process")
-      }
+  //     override fun failed() {
+  //       promise.reject("failed", "failed video merge Process")
+  //     }
 
-    })
+  //   })
 
-  }
+  // }
 
   private fun cropAudioProcess(
     audioPath: String,
@@ -216,7 +211,7 @@ class AudioRemoveModule(reactContext: ReactApplicationContext) :
     endingTime: String,
     promise: Promise
   ) {
-    val outPutPath = Common.getFilePath(reactContext, Common.VIDEO)
+    val outPutPath = Common.getFilePath(reactContext, Common.MP3)
     val query = ffmpegQueryExtension.cutAudio(audioPath, startTime, endingTime, outPutPath)
     CallBackOfQuery().callQuery(query, object : FFmpegCallBack {
       override fun process(logMessage: LogMessage) {
@@ -239,5 +234,14 @@ class AudioRemoveModule(reactContext: ReactApplicationContext) :
   }
 
 
-}
+
+  }
+
+
+
+
+
+
+
+
 

@@ -5,7 +5,7 @@ import org.apache.tools.ant.taskdefs.condition.Os
 buildscript {
     ext {
         buildToolsVersion = "31.0.0"
-        minSdkVersion = 21
+        minSdkVersion = 24
         compileSdkVersion = 31
         targetSdkVersion = 31
 
@@ -20,6 +20,7 @@ buildscript {
     repositories {
         google()
         mavenCentral()
+        jcenter()
     }
     dependencies {
         classpath("com.android.tools.build:gradle:7.0.4")
@@ -49,5 +50,6 @@ allprojects {
         }
         google()
         maven { url 'https://www.jitpack.io' }
+        jcenter()
     }
 }
