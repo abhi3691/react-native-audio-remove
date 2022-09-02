@@ -2,19 +2,25 @@
 
 (Android Only)
 
-React Native module for merge video & audio,removeAudio from video,fastAndSlow video,trimVideo,merge videos,crop audio For Android only.
+This library is a React Native bridge around native Video Editing libraries. It allows you to edit any video by providing below set of features:
 
-## Installation
 
-```sh
-npm install react-native-audio-remove
-npm install react-native-video
+* _**Video Trimming**_
+* _**Merge Video And Audio**_
+* _**Audio Trimming**_
+* _**Remove Audio From Video**_
+* _**FastMotion Video**_
+* _**SlowMotion Video**_
 
-```
 
-## Android Setup
+## 📖 Getting started
 
-You need to add in your android/app/build.gradle this:
+`$ yarn add  react-native-audio-remove`
+
+
+- **Android**
+
+- Please add below script in your build.gradle
 
 ```java
 
@@ -29,7 +35,7 @@ pickFirst 'lib/arm64-v8a/libc++\_shared.so'
 }
 ```
 
-## Usage
+## 💻 Usage
 
 ```js
 import * as React from 'react';
@@ -160,10 +166,26 @@ const styles = StyleSheet.create({
 
 ```
 
-## Credits
+## ✨ Credits
 
 Thank you for Contribution [Akshy K](https://instagram.com/_akshay119?igshid=YmMyMTA2M2Y=).
 
-## License
 
-Copyright (c) 2022 Abhinand V k, react-native-audio-remove is released under the MIT license.
+## 📜 License
+
+This library is provided under the Apache 2 License.\
+
+## 💖 Support my projects
+I open-source almost everything I can, and I try to reply everyone needing help using these projects. Obviously, this takes time. You can integrate and use these projects in your applications for free! You can even change the source code and redistribute (even resell it).
+
+However, if you get some profit from this or just want to encourage me to continue creating stuff, there are few ways you can do it:
+* Starring and sharing the projects you like 🚀
+* If you're feeling especially charitable, please follow [abhi3691](https://github.com/abhi3691) on GitHub.
+
+
+
+  Thanks! ❤️
+  <br/>
+  [abhi3691.github.io]https://github.com/abhi3691)
+  <br/>
+  </ Abhinand Vk >

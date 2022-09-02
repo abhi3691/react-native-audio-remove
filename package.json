@@ -1,6 +1,6 @@
 {
   "name": "react-native-audio-remove",
-  "version": "0.1.23",
+  "version": "0.1.24",
   "description": "React Native module for merge video & audio,removeAudio from video,fastAndSlow video,trimVideo,merge videos,crop audio  For Android only.",
   "main": "lib/commonjs/index",
   "module": "lib/module/index",
@@ -40,13 +40,13 @@
     "crop audio",
     "remove audio from video"
   ],
-  "repository": "https://www.audioremove.io",
-  "author": "react-native <audioremove@gmail.com> (https://www.audioremove.io)",
-  "license": "MIT",
+  "repository": "https://github.com/abhi3691/react-native-audio-remove",
+  "author": "Abhinand Vk <abhinandvk41@gmail.com> (https://github.com/abhi3691)",
+  "license": "Apache License 2.0",
   "bugs": {
-    "url": "https://www.audioremove.io/issues"
+    "url": "https://github.com/abhi3691/react-native-audio-remove/issues"
   },
-  "homepage": "https://www.audioremove.io#readme",
+  "homepage": "https://github.com/abhi3691/react-native-audio-remove",
   "publishConfig": {
     "registry": "https://registry.npmjs.org/"
   },
